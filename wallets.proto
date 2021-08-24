@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+import "user.proto";
+package wallets.services;
+
+service WalletService {
+	rpc deposit( Deposit) returns (Transaction) {}
+	rpc withdraw(Withdraw) returns (Transaction) {}
+	rpc transfer(Transfer) returns (Transaction) {}
+	rpc getBalance(Wallet) returns (Wallet) {}
+
+}
+
+message Deposit {
+    user.services.User user = 1;
+    Transaction transaction = 2;
+}
+
+message Withdraw {
+    user.services.User user = 1;
+    Transaction transaction = 2;
+}
+
+message Transfer {
+    user.services.User from_user = 1;
+    user.services.User to_user = 2;
+    Transaction transaction = 3;
+}
+
+message Transaction {
+	int64 id = 1;
+	double amount = 2;
+	int64  from_user_id = 3;
+	int64  to_user_id = 4;
+    string description = 5;
+    string from_wallet_name = 6;
+    string to_wallet_name = 7;
+    bool confiremd = 8;
+}
+
+message Wallet {
+	int64 id = 1;
+	user.services.User user = 2;
+	double  balance = 3;
+	string  name = 4;
+}

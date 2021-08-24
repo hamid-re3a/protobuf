@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package packages.services;
+
+service PackagesService {
+	rpc packageById(Id) returns (Package) {}
+}
+
+message Id {
+	int64 id = 1;
+}
+
+message Package {
+	int64 id = 1;
+	string name = 2;
+	string short_name = 3;
+	int32 validity_in_days = 4;
+	double price = 5;
+	int32 roi_percentage = 6;
+	int32 direct_percentage = 7;
+	int32 binary_percentage = 8;
+	int64 category_id = 9;
+	
+	string deleted_at = 10;
+	string created_at = 11;
+	string updated_at = 12;
+}
