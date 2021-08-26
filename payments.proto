@@ -27,7 +27,7 @@ message PaymentType {
 }
 
 message PaymentTypes {
-	PaymentType payment_types = 1;
+	repeated PaymentType payment_types = 1;
 }
 
 message PaymentDriver {
