@@ -33,9 +33,10 @@ message Order {
 	string deleted_at =16;
 	string created_at =17;
 	string updated_at =18;
-
-
+	
+	
 	user.services.User user = 19;
 	user.services.User to_user = 20;
-
+	
+	int64  package_id = 21;
 }
