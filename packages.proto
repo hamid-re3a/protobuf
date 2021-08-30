@@ -24,4 +24,11 @@ message Package {
 	string deleted_at = 10;
 	string created_at = 11;
 	string updated_at = 12;
+
+	repeated IndirectCommission IndirectCommission = 13;
+}
+
+message IndirectCommission {
+	int32 level = 1;
+	int32 percentage = 2;
 }
