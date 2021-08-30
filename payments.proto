@@ -1,87 +1,103 @@
 syntax = "proto3";
 
 import "user.proto";
-import "orders.proto";
+
 package payments.services;
 
 service PaymentsService {
-	rpc getInvoiceById(Id) returns (Invoice) {}
-	rpc pay(Invoice) returns (Invoice) {}
-	rpc getPaymentCurrencies(EmptyObject) returns (PaymentCurrencies) {}
-	rpc getPaymentTypes(EmptyObject) returns (PaymentTypes) {}
+  rpc getInvoiceById(Id) returns (Invoice) {}
+  rpc pay(Invoice) returns (Invoice) {}
+  rpc getPaymentCurrencies(EmptyObject) returns (PaymentCurrencies) {}
+  rpc getPaymentTypes(EmptyObject) returns (PaymentTypes) {}
 }
 message Id {
-	int64 id = 1;
+  int64 id = 1;
 }
 message EmptyObject {
 
 }
 message PaymentType {
-	int64 id = 1;
-	string name = 2;
-	bool is_active = 3;
+  int64 id = 1;
+  string name = 2;
+  bool is_active = 3;
 
-	string deleted_at =4;
-	string created_at =5;
-	string updated_at =6;
+  string deleted_at = 4;
+  string created_at = 5;
+  string updated_at = 6;
 }
 
 message PaymentTypes {
-	repeated PaymentType payment_types = 1;
+  repeated PaymentType payment_types = 1;
 }
 
 message PaymentDriver {
-	int64 id = 1;
-	string name = 2;
-	bool is_active = 3;
+  int64 id = 1;
+  string name = 2;
+  bool is_active = 3;
 
-	string deleted_at =4;
-	string created_at =5;
-	string updated_at =6;
+  string deleted_at = 4;
+  string created_at = 5;
+  string updated_at = 6;
 }
 
 message PaymentCurrency {
-	int64 id = 1;
-	string name = 2;
-	bool is_active = 3;
+  int64 id = 1;
+  string name = 2;
+  bool is_active = 3;
 
-	string deleted_at =4;
-	string created_at =5;
-	string updated_at =6;
+  string deleted_at = 4;
+  string created_at = 5;
+  string updated_at = 6;
 
-	repeated PaymentDriver payment_driver = 7;
+  repeated PaymentDriver payment_driver = 7;
 
 }
 message PaymentCurrencies {
-	repeated PaymentCurrency payment_currencies = 1;
+  repeated PaymentCurrency payment_currencies = 1;
+}
+
+
+message PaymentTransaction {
+  int64 id = 1;
+  int64 invoice_id = 2;
+  string hash = 3;
+  string received_date = 4;
+  string value = 5;
+  string fee = 6;
+  string status = 7;
+  string destination = 8;
+
 }
 
 message Invoice {
-	int64 order_id = 1;
-	double pf_amount = 2;
-	double amount = 3;
+  string payable_type = 1;
+  int64 payable_id = 2;
+  int64 user_id = 3;
+  double pf_amount = 4;
+  double amount = 5;
 
-	string transaction_id = 4;
-	string checkout_link = 5;
-	string status = 6;
-	string additional_status = 7;
-	
-	double paid_amount= 8;
-	double due_amount= 9;
-	bool is_paid = 10;
-	string expiration_time = 11;
-	
-	string  payment_type = 12;
-	string  payment_currency = 13;
-	string  payment_driver = 14;
-	
-	string deleted_at =15;
-	string created_at =16;
-	string updated_at =17;
-	
-	orders.services.Order order = 18;
-	user.services.User user = 19;
+  string transaction_id = 6;
+  string checkout_link = 7;
+  string status = 8;
+  string additional_status = 9;
+
+  double paid_amount = 10;
+  double due_amount = 11;
+  bool is_paid = 12;
+  string expiration_time = 13;
+
+  string  payment_type = 14;
+  string  payment_currency = 15;
+  string  payment_driver = 16;
+
+  string deleted_at = 17;
+  string created_at = 18;
+  string updated_at = 19;
+
+  user.services.User user = 20;
 
 
-	double deposit_amount = 20;
+  double deposit_amount = 21;
+
+  repeated PaymentTransaction transactions = 22;
 }
