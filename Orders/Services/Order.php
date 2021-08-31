@@ -97,6 +97,10 @@ class Order extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int64 package_id = 21;</code>
      */
     protected $package_id = 0;
+    /**
+     * Generated from protobuf field <code>.packages.services.Package package = 22;</code>
+     */
+    protected $package = null;
 
     /**
      * Constructor.
@@ -125,6 +129,7 @@ class Order extends \Google\Protobuf\Internal\Message
      *     @type \User\Services\User $user
      *     @type \User\Services\User $to_user
      *     @type int|string $package_id
+     *     @type \Packages\Services\Package $package
      * }
      */
     public function __construct($data = NULL) {
@@ -610,6 +615,38 @@ class Order extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt64($var);
         $this->package_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.packages.services.Package package = 22;</code>
+     * @return \Packages\Services\Package|null
+     */
+    public function getPackage()
+    {
+        return $this->package;
+    }
+
+    public function hasPackage()
+    {
+        return isset($this->package);
+    }
+
+    public function clearPackage()
+    {
+        unset($this->package);
+    }
+
+    /**
+     * Generated from protobuf field <code>.packages.services.Package package = 22;</code>
+     * @param \Packages\Services\Package $var
+     * @return $this
+     */
+    public function setPackage($var)
+    {
+        GPBUtil::checkMessage($var, \Packages\Services\Package::class);
+        $this->package = $var;
 
         return $this;
     }

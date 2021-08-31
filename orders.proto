@@ -1,6 +1,8 @@
 syntax = "proto3";
 
 import "user.proto";
+import "packages.proto";
+
 package orders.services;
 
 service OrdersService {
@@ -39,4 +41,6 @@ message Order {
 	user.services.User to_user = 20;
 	
 	int64  package_id = 21;
+
+	packages.services.Package package = 22;
 }
