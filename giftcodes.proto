@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+import "user.proto";
+package giftcode.services;
+
+service GiftcodeService {
+  rpc createGiftcode(Giftcode) returns (Giftcode) {}
+  rpc redeemGiftcode(Giftcode) returns (Giftcode) {}
+  rpc cancelGiftcode(Giftcode) returns (Giftcode) {}
+  rpc getGiftcodeById(Id) returns (Giftcode) {}
+  rpc getGiftcodeByUuid(Id) returns (Giftcode) {}
+  rpc getUserCreatedGiftcodesCount(user.services.User) returns (Count) {}
+  rpc getUserExpiredGiftcodesCount(user.services.User) returns (Count) {}
+  rpc getUserCanceledGiftcodesCount(user.services.User) returns (Count) {}
+  rpc getUserRedeemedGiftcodesCount(user.services.User) returns (Count) {}
+}
+
+message Id{
+  int64  id = 1;
+}
+
+message Uuid {
+  string uuid = 1;
+}
+
+message Count {
+  int64 counts = 1;
+}
+
+message Giftcode {
+  int64 id = 1;
+  string uuid = 2;
+  int64 user_id = 3;
+  int64 package_id = 4;
+  double packages_cost_in_usd = 5;
+  double registration_fee_in_usd = 6;
+  double total_cost_in_usd = 7;
+  string code = 8;
+  string expiration_date = 9;
+  int64 redeem_user_id = 10;
+  string redeem_date = 11;
+  bool is_canceled = 12;
+  user.services.User creator = 13;
+  user.services.User redeemer = 14;
+  string deleted_at = 15;
+  string created_at = 16;
+  string updated_at = 17;
+
+}
+
+message GiftcodesArray {
+  repeated Giftcode giftcode = 1;
+}

@@ -15,3 +15,9 @@ message User {
 	bool is_freeze = 9;
 	bool is_deactivate = 10;
 }
+
+message UserUpdate {
+	int64 id = 1;
+	int64 to_id = 2;
+	string queue_name = 3;
+}
