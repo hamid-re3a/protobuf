@@ -15,7 +15,6 @@ message User {
 	string block_type = 9;
 	bool is_freeze = 10;
 	bool is_deactivate = 11;
-	bool is_fake = 12;
 }
 
 message UserUpdate {
