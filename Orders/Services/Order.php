@@ -50,9 +50,9 @@ class Order extends \Google\Protobuf\Internal\Message
      */
     protected $is_refund_at = '';
     /**
-     * Generated from protobuf field <code>string is_expired_at = 10;</code>
+     * Generated from protobuf field <code>int64 validity_in_days = 10;</code>
      */
-    protected $is_expired_at = '';
+    protected $validity_in_days = 0;
     /**
      * Generated from protobuf field <code>string is_commission_resolved_at = 11;</code>
      */
@@ -117,7 +117,7 @@ class Order extends \Google\Protobuf\Internal\Message
      *     @type string $is_paid_at
      *     @type string $is_resolved_at
      *     @type string $is_refund_at
-     *     @type string $is_expired_at
+     *     @type int|string $validity_in_days
      *     @type string $is_commission_resolved_at
      *     @type string $payment_type
      *     @type string $payment_currency
@@ -336,23 +336,23 @@ class Order extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string is_expired_at = 10;</code>
-     * @return string
+     * Generated from protobuf field <code>int64 validity_in_days = 10;</code>
+     * @return int|string
      */
-    public function getIsExpiredAt()
+    public function getValidityInDays()
     {
-        return $this->is_expired_at;
+        return $this->validity_in_days;
     }
 
     /**
-     * Generated from protobuf field <code>string is_expired_at = 10;</code>
-     * @param string $var
+     * Generated from protobuf field <code>int64 validity_in_days = 10;</code>
+     * @param int|string $var
      * @return $this
      */
-    public function setIsExpiredAt($var)
+    public function setValidityInDays($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->is_expired_at = $var;
+        GPBUtil::checkInt64($var);
+        $this->validity_in_days = $var;
 
         return $this;
     }
