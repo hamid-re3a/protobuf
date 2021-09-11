@@ -44,4 +44,18 @@ class OrdersServiceClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * @param \User\Services\User $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Orders\Services\Order
+     */
+    public function hasValidPackage(\User\Services\User $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/orders.services.OrdersService/hasValidPackage',
+        $argument,
+        ['\Orders\Services\Order', 'decode'],
+        $metadata, $options);
+    }
+
 }

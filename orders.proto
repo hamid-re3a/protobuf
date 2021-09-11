@@ -8,6 +8,7 @@ package orders.services;
 service OrdersService {
   rpc OrderById(Id) returns (Order) {}
   rpc updateOrder(Order) returns (Order) {}
+  rpc hasValidPackage(user.services.User) returns (Order){}
 }
 
 message Id {
