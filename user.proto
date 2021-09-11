@@ -16,10 +16,11 @@ message User {
 	string  username = 4;
 	string  email = 5;
 	string  role = 6;
-	int64 sponsor_id = 7;
-	string block_type = 8;
-	bool is_freeze = 9;
-	bool is_deactivate = 10;
+	int64 member_id = 7;
+	int64 sponsor_id = 8;
+	string block_type = 9;
+	bool is_freeze = 10;
+	bool is_deactivate = 11;
 }
 
 message UserUpdate {
