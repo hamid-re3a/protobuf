@@ -2,7 +2,13 @@ syntax = "proto3";
 
 package user.services;
 
+service UserService {
+	rpc getUserById(Id) returns (User) {}
+}
 
+message Id {
+	int64 id = 1;
+}
 message User {
 	int64 id = 1;
 	string  first_name = 2;
