@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package MLM.services.grpc;
+
+message ResidualBonus {
+  int64 rank = 1;
+  int64 level = 2;
+  double percentage = 3;
+}
+
+message PackageRoi {
+  int64 package_id = 1;
+  double roi_percentage = 2;
+  string due_date = 3;
+  int64 user_id = 4;
+}
