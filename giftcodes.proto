@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 import "user.proto";
-package giftcode.services;
+package giftcode.services.grpc;
 
 service GiftcodeService {
   rpc createGiftcode(Giftcode) returns (Giftcode) {}
@@ -9,10 +9,10 @@ service GiftcodeService {
   rpc cancelGiftcode(Giftcode) returns (Giftcode) {}
   rpc getGiftcodeById(Id) returns (Giftcode) {}
   rpc getGiftcodeByUuid(Id) returns (Giftcode) {}
-  rpc getUserCreatedGiftcodesCount(user.services.User) returns (Count) {}
-  rpc getUserExpiredGiftcodesCount(user.services.User) returns (Count) {}
-  rpc getUserCanceledGiftcodesCount(user.services.User) returns (Count) {}
-  rpc getUserRedeemedGiftcodesCount(user.services.User) returns (Count) {}
+  rpc getUserCreatedGiftcodesCount(user.services.grpc.User) returns (Count) {}
+  rpc getUserExpiredGiftcodesCount(user.services.grpc.User) returns (Count) {}
+  rpc getUserCanceledGiftcodesCount(user.services.grpc.User) returns (Count) {}
+  rpc getUserRedeemedGiftcodesCount(user.services.grpc.User) returns (Count) {}
 }
 
 message Id{
@@ -40,8 +40,8 @@ message Giftcode {
   int64 redeem_user_id = 10;
   string redeem_date = 11;
   bool is_canceled = 12;
-  user.services.User creator = 13;
-  user.services.User redeemer = 14;
+  user.services.grpc.User creator = 13;
+  user.services.grpc.User redeemer = 14;
   string deleted_at = 15;
   string created_at = 16;
   string updated_at = 17;

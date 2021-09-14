@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package user.services;
+package user.services.grpc;
 
 service UserService {
 	rpc getUserById(Id) returns (User) {}

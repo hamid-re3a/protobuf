@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package wallets.services;
+package wallets.services.grpc;
 
 service WalletService {
   rpc deposit(Deposit) returns (Deposit) {}

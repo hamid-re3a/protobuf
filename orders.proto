@@ -3,12 +3,12 @@ syntax = "proto3";
 import "user.proto";
 import "packages.proto";
 
-package orders.services;
+package orders.services.grpc;
 
 service OrdersService {
   rpc OrderById(Id) returns (Order) {}
   rpc updateOrder(Order) returns (Order) {}
-  rpc hasValidPackage(user.services.User) returns (Order){}
+  rpc hasValidPackage(user.services.grpc.User) returns (Order){}
 }
 
 message Id {
@@ -38,10 +38,10 @@ message Order {
   string updated_at = 18;
 
 
-  user.services.User user = 19;
-  user.services.User to_user = 20;
+  user.services.grpc.User user = 19;
+  user.services.grpc.User to_user = 20;
 
   int64  package_id = 21;
 
-  packages.services.Package package = 22;
+  packages.services.grpc.Package package = 22;
 }

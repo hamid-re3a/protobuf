@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package packages.services;
+package packages.services.grpc;
 
 service PackagesService {
 	rpc packageById(Id) returns (Package) {}

@@ -2,7 +2,7 @@ syntax = "proto3";
 
 import "user.proto";
 
-package payments.services;
+package payments.services.grpc;
 
 service PaymentsService {
   rpc getInvoiceById(Id) returns (Invoice) {}
@@ -94,7 +94,7 @@ message Invoice {
   string created_at = 18;
   string updated_at = 19;
 
-  user.services.User user = 20;
+  user.services.grpc.User user = 20;
 
 
   double deposit_amount = 21;
