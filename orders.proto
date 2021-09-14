@@ -15,6 +15,12 @@ message Id {
   int64 id = 1;
 }
 
+enum OrderPlans {
+  ORDER_PLAN_PURCHASE = 0;
+  ORDER_PLAN_START = 1;
+  ORDER_PLAN_SPECIAL = 2;
+  ORDER_PLAN_COMPANY = 3;
+}
 
 message Order {
   int64 id = 1;
@@ -31,7 +37,7 @@ message Order {
   string  payment_type = 12;
   string  payment_currency = 13;
   string  payment_driver = 14;
-  string  plan = 15;
+  OrderPlans  plan = 15;
 
   string deleted_at = 16;
   string created_at = 17;

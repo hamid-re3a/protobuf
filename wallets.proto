@@ -10,6 +10,11 @@ service WalletService {
 
 }
 
+enum WalletNames {
+  EARNING = 0;
+  DEPOSIT = 1;
+}
+
 message Deposit {
 
   int64  user_id = 1;
@@ -17,12 +22,13 @@ message Deposit {
   string sub_type = 3;
   double amount = 4;
   string description = 5;
-  string wallet_name = 6;
+  WalletNames wallet_name = 6;
 
   string service_name = 7;
   int64 payload_id = 8;
   bool confirmed = 9;
 }
+
 
 message Withdraw {
   
@@ -32,7 +38,7 @@ message Withdraw {
   string sub_type = 3;
   double amount = 4;
   string description = 5;
-  string wallet_name = 6;
+  WalletNames wallet_name = 6;
 
   string service_name = 7;
   int64 payload_id = 8;
@@ -47,8 +53,8 @@ message Transfer {
   double amount = 3;
   string description = 4;
 
-  string from_wallet_name = 5;
-  string to_wallet_name = 6;
+  WalletNames from_wallet_name = 5;
+  WalletNames to_wallet_name = 6;
   
   string service_name = 7;
   int64 payload_id = 8;
@@ -60,5 +66,5 @@ message Wallet {
   int64 id = 1;
   int64  user_id = 2;
   double  balance = 3;
-  string  name = 4;
+  WalletNames  name = 4;
 }
