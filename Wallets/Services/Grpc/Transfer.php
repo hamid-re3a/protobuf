@@ -49,6 +49,14 @@ class Transfer extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool confirmed = 9;</code>
      */
     protected $confirmed = false;
+    /**
+     * Generated from protobuf field <code>int64 deposit_transaction_id = 10;</code>
+     */
+    protected $deposit_transaction_id = 0;
+    /**
+     * Generated from protobuf field <code>int64 withdraw_transaction_id = 11;</code>
+     */
+    protected $withdraw_transaction_id = 0;
 
     /**
      * Constructor.
@@ -65,6 +73,8 @@ class Transfer extends \Google\Protobuf\Internal\Message
      *     @type string $service_name
      *     @type int|string $payload_id
      *     @type bool $confirmed
+     *     @type int|string $deposit_transaction_id
+     *     @type int|string $withdraw_transaction_id
      * }
      */
     public function __construct($data = NULL) {
@@ -266,6 +276,50 @@ class Transfer extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->confirmed = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 deposit_transaction_id = 10;</code>
+     * @return int|string
+     */
+    public function getDepositTransactionId()
+    {
+        return $this->deposit_transaction_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 deposit_transaction_id = 10;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setDepositTransactionId($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->deposit_transaction_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 withdraw_transaction_id = 11;</code>
+     * @return int|string
+     */
+    public function getWithdrawTransactionId()
+    {
+        return $this->withdraw_transaction_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 withdraw_transaction_id = 11;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setWithdrawTransactionId($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->withdraw_transaction_id = $var;
 
         return $this;
     }

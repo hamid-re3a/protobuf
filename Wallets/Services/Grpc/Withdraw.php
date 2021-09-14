@@ -49,6 +49,10 @@ class Withdraw extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool confirmed = 9;</code>
      */
     protected $confirmed = false;
+    /**
+     * Generated from protobuf field <code>int64 transaction_id = 10;</code>
+     */
+    protected $transaction_id = 0;
 
     /**
      * Constructor.
@@ -65,6 +69,7 @@ class Withdraw extends \Google\Protobuf\Internal\Message
      *     @type string $service_name
      *     @type int|string $payload_id
      *     @type bool $confirmed
+     *     @type int|string $transaction_id
      * }
      */
     public function __construct($data = NULL) {
@@ -266,6 +271,28 @@ class Withdraw extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->confirmed = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 transaction_id = 10;</code>
+     * @return int|string
+     */
+    public function getTransactionId()
+    {
+        return $this->transaction_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 transaction_id = 10;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setTransactionId($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->transaction_id = $var;
 
         return $this;
     }

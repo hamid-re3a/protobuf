@@ -27,38 +27,42 @@ message Deposit {
   string service_name = 7;
   int64 payload_id = 8;
   bool confirmed = 9;
+  int64 transaction_id = 10;
 }
 
 
 message Withdraw {
   
   int64  user_id = 1;
-
+  
   string type = 2;
   string sub_type = 3;
   double amount = 4;
   string description = 5;
   WalletNames wallet_name = 6;
-
+  
   string service_name = 7;
   int64 payload_id = 8;
   bool confirmed = 9;
+  int64 transaction_id = 10;
 }
 
 message Transfer {
   int64  from_user_id = 1;
   int64  to_user_id = 2;
-
-
+  
+  
   double amount = 3;
   string description = 4;
-
+  
   WalletNames from_wallet_name = 5;
   WalletNames to_wallet_name = 6;
   
   string service_name = 7;
   int64 payload_id = 8;
   bool confirmed = 9;
+  int64 deposit_transaction_id = 10;
+  int64 withdraw_transaction_id = 11;
 
 }
 
