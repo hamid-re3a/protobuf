@@ -27,7 +27,7 @@ message Deposit {
   string service_name = 7;
   int64 payload_id = 8;
   bool confirmed = 9;
-  int64 transaction_id = 10;
+  string transaction_id = 10;
 }
 
 
@@ -44,7 +44,7 @@ message Withdraw {
   string service_name = 7;
   int64 payload_id = 8;
   bool confirmed = 9;
-  int64 transaction_id = 10;
+  string transaction_id = 10;
 }
 
 message Transfer {
@@ -61,8 +61,8 @@ message Transfer {
   string service_name = 7;
   int64 payload_id = 8;
   bool confirmed = 9;
-  int64 deposit_transaction_id = 10;
-  int64 withdraw_transaction_id = 11;
+  string deposit_transaction_id = 10;
+  string withdraw_transaction_id = 11;
 
 }
 
