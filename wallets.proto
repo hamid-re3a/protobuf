@@ -24,10 +24,7 @@ message Deposit {
   string description = 5;
   WalletNames wallet_name = 6;
 
-  string service_name = 7;
-  int64 payload_id = 8;
-  bool confirmed = 9;
-  string transaction_id = 10;
+  string transaction_id = 7;
 }
 
 
@@ -41,10 +38,7 @@ message Withdraw {
   string description = 5;
   WalletNames wallet_name = 6;
   
-  string service_name = 7;
-  int64 payload_id = 8;
-  bool confirmed = 9;
-  string transaction_id = 10;
+  string transaction_id = 7;
 }
 
 message Transfer {
@@ -58,11 +52,8 @@ message Transfer {
   WalletNames from_wallet_name = 5;
   WalletNames to_wallet_name = 6;
   
-  string service_name = 7;
-  int64 payload_id = 8;
-  bool confirmed = 9;
-  string deposit_transaction_id = 10;
-  string withdraw_transaction_id = 11;
+  string deposit_transaction_id = 7;
+  string withdraw_transaction_id = 8;
 
 }
 

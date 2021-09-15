@@ -16,6 +16,7 @@ message Id {
 message EmptyObject {
 
 }
+
 message PaymentType {
   int64 id = 1;
   string name = 2;
