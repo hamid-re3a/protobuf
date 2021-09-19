@@ -4,11 +4,27 @@ package user.services.grpc;
 
 service UserService {
 	rpc getUserById(Id) returns (User) {}
+	rpc getUserWalletInfo(WalletRequest) returns (WalletInfo) {}
 }
 
 message Id {
 	int64 id = 1;
 }
+
+enum WalletType {
+	BTC = 0;
+}
+
+message WalletRequest {
+	int64 user_id = 1;
+	WalletType wallet_type = 2;
+}
+
+message WalletInfo {
+	WalletType wallet_type = 1;
+	string address = 2;
+}
+
 message User {
 	int64 id = 1;
 	string  first_name = 2;
