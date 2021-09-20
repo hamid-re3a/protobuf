@@ -1,6 +1,21 @@
 syntax = "proto3";
 
+import "user.proto";
+import "orders.proto";
+
 package MLM.services.grpc;
+
+service MLMService {
+  rpc hasValidPackage(user.services.grpc.User) returns (Acknowledge){}
+  rpc simulateOrder(orders.services.grpc.Order) returns (Acknowledge){}
+  rpc submitOrder(orders.services.grpc.Order) returns (Acknowledge){}
+}
+
+message Acknowledge {
+  bool status = 1;
+  string message = 2;
+  string created_at = 3;
+}
 
 message ResidualBonus {
   int64 id = 1;
