@@ -7,10 +7,23 @@ package MLM.services.grpc;
 
 service MLMService {
   rpc hasValidPackage(user.services.grpc.User) returns (Acknowledge){}
+  rpc getUserRank(user.services.grpc.User) returns (Rank){}
   rpc simulateOrder(orders.services.grpc.Order) returns (Acknowledge){}
   rpc submitOrder(orders.services.grpc.Order) returns (Acknowledge){}
 }
-
+message Rank {
+  int64 rank = 1;
+  string rank_name = 2;
+  int64 condition_converted_in_bp = 3;
+  int64 condition_sub_rank = 4;
+  bool condition_direct_or_indirect = 5;
+  int64 prize_in_pf = 6;
+  string prize_alternative = 7;
+  int64 cap = 8;
+  int64 withdrawal_limit = 9;
+  int64 condition_number_of_left_children = 10;
+  int64 condition_number_of_right_children = 11;
+}
 message Acknowledge {
   bool status = 1;
   string message = 2;
