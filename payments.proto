@@ -100,5 +100,4 @@ message Invoice {
 
   double deposit_amount = 21;
 
-  repeated PaymentTransaction transactions = 22;
 }
