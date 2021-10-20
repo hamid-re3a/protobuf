@@ -64,9 +64,9 @@ class UserServiceClient extends \Grpc\BaseStub {
      * @param array $options call options
      * @return \User\Services\Grpc\Acknowledge
      */
-    public function checkKYC(\User\Services\Grpc\User $argument,
+    public function checkKYCStatus(\User\Services\Grpc\User $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/user.services.grpc.UserService/checkKYC',
+        return $this->_simpleRequest('/user.services.grpc.UserService/checkKYCStatus',
         $argument,
         ['\User\Services\Grpc\Acknowledge', 'decode'],
         $metadata, $options);

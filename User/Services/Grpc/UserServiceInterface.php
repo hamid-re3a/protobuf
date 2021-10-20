@@ -46,5 +46,5 @@ interface UserServiceInterface extends Grpc\ServiceInterface
     *
     * @throws Grpc\Exception\InvokeException
     */
-    public function checkKYC(Context $context, User $request): Acknowledge;
+    public function checkKYCStatus(Context $context, User $request): Acknowledge;
 }

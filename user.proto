@@ -6,7 +6,7 @@ service UserService {
 	rpc getUserById(Id) returns (User) {}
 	rpc getUserByMemberId(Id) returns (User) {}
 	rpc getUserWalletInfo(WalletRequest) returns (WalletInfo) {}
-	rpc checkKYC(User) returns (Acknowledge) {}
+	rpc checkKYCStatus(User) returns (Acknowledge) {}
 }
 
 message Acknowledge {
