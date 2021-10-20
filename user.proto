@@ -6,6 +6,13 @@ service UserService {
 	rpc getUserById(Id) returns (User) {}
 	rpc getUserByMemberId(Id) returns (User) {}
 	rpc getUserWalletInfo(WalletRequest) returns (WalletInfo) {}
+	rpc checkKYC(User) returns (Acknowledge) {}
+}
+
+message Acknowledge {
+	bool status = 1;
+	string message = 2;
+	string created_at = 3;
 }
 
 message Id {
@@ -38,6 +45,7 @@ message User {
 	string block_type = 9;
 	bool is_freeze = 10;
 	bool is_deactivate = 11;
+	string gender = 12;
 }
 
 message UserUpdate {
