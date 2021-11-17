@@ -16,7 +16,7 @@ message Acknowledge {
 }
 
 message UserTransactionPassword {
-	string user_id = 1;
+	int64 user_id = 1;
 	string transaction_password = 2;
 }
 message Id {
