@@ -14,7 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class UserTransactionPassword extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string transaction_password = 1;</code>
+     * Generated from protobuf field <code>string user_Id = 1;</code>
+     */
+    protected $user_Id = '';
+    /**
+     * Generated from protobuf field <code>string transaction_password = 2;</code>
      */
     protected $transaction_password = '';
 
@@ -24,6 +28,7 @@ class UserTransactionPassword extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $user_Id
      *     @type string $transaction_password
      * }
      */
@@ -33,7 +38,29 @@ class UserTransactionPassword extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string transaction_password = 1;</code>
+     * Generated from protobuf field <code>string user_Id = 1;</code>
+     * @return string
+     */
+    public function getUserId()
+    {
+        return $this->user_Id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_Id = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_Id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string transaction_password = 2;</code>
      * @return string
      */
     public function getTransactionPassword()
@@ -42,7 +69,7 @@ class UserTransactionPassword extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string transaction_password = 1;</code>
+     * Generated from protobuf field <code>string transaction_password = 2;</code>
      * @param string $var
      * @return $this
      */
