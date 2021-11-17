@@ -6,7 +6,7 @@ service UserService {
 	rpc getUserById(Id) returns (User) {}
 	rpc getUserByMemberId(Id) returns (User) {}
 	rpc getUserWalletInfo(WalletRequest) returns (WalletInfo) {}
-	rpc checkKYCStatus(User) returns (Acknowledge) {}
+	rpc checkTransactionPassword(UserTransactionPassword) returns (Acknowledge) {}
 }
 
 message Acknowledge {
@@ -15,6 +15,9 @@ message Acknowledge {
 	string created_at = 3;
 }
 
+message UserTransactionPassword {
+	string transaction_password = 1;
+}
 message Id {
 	int64 id = 1;
 }

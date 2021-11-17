@@ -2,7 +2,14 @@ syntax = "proto3";
 
 package orders.services.grpc;
 
-
+service OrdersService {
+	rpc sponsorPackage(Order) returns (Acknowledge) {}
+}
+message Acknowledge {
+  bool status = 1;
+  string message = 2;
+  string created_at = 3;
+}
 message Id {
   int64 id = 1;
 }
@@ -12,6 +19,8 @@ enum OrderPlans {
   ORDER_PLAN_START = 1;
   ORDER_PLAN_SPECIAL = 2;
   ORDER_PLAN_COMPANY = 3;
+  ORDER_PLAN_START_50 = 4;
+  ORDER_PLAN_START_75 = 5;
 }
 
 

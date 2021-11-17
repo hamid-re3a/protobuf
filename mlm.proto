@@ -10,6 +10,12 @@ service MLMService {
   rpc getUserRank(user.services.grpc.User) returns (Rank){}
   rpc simulateOrder(orders.services.grpc.Order) returns (Acknowledge){}
   rpc submitOrder(orders.services.grpc.Order) returns (Acknowledge){}
+  rpc isUserInSecondUserDescendant(UserDescendantCheck) returns (Acknowledge) {}
+}
+
+message UserDescendantCheck {
+	int64 user_index_id = 1;
+	int64 user_to_show_id = 2;
 }
 message Rank {
   int64 rank = 1;

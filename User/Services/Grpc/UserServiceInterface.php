@@ -41,10 +41,10 @@ interface UserServiceInterface extends Grpc\ServiceInterface
 
     /**
     * @param Context $context
-    * @param User $request
+    * @param UserTransactionPassword $request
     * @return Acknowledge
     *
     * @throws Grpc\Exception\InvokeException
     */
-    public function checkKYCStatus(Context $context, User $request): Acknowledge;
+    public function checkTransactionPassword(Context $context, UserTransactionPassword $request): Acknowledge;
 }

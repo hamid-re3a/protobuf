@@ -4,12 +4,21 @@ package packages.services.grpc;
 
 service PackagesService {
 	rpc packageById(Id) returns (Package) {}
+	rpc packageIsInBiggestPackageCategory(PackageCheck) returns (Acknowledge){}
 }
 
 message Id {
 	int64 id = 1;
 }
-
+message PackageCheck {
+	int64 package_index_id = 1;
+	int64 package_to_buy_id = 2;
+}
+message Acknowledge {
+	bool status = 1;
+	string message = 2;
+	string created_at = 3;
+}
 message Package {
 	int64 id = 1;
 	string name = 2;

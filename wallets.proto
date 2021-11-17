@@ -13,6 +13,7 @@ service WalletService {
 enum WalletNames {
   EARNING = 0;
   DEPOSIT = 1;
+  JANEX = 2;
 }
 
 message Deposit {

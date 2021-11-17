@@ -1,0 +1,16 @@
+
+syntax = "proto3";
+
+
+import "user.proto";
+package Kyc.services.grpc;
+
+service KycService {
+    rpc checkKYCStatus(user.services.grpc.User) returns (Acknowledge) {}
+}
+
+message Acknowledge {
+	bool status = 1;
+	string message = 2;
+	string created_at = 3;
+}
