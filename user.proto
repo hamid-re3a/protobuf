@@ -50,6 +50,8 @@ message User {
 	bool is_freeze = 10;
 	bool is_deactivate = 11;
 	string gender = 12;
+	string country = 13;
+	string country_iso2 = 14;
 }
 
 message UserUpdate {
