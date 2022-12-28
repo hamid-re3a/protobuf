@@ -46,4 +46,7 @@ message Order {
   string updated_at = 18;
   int64  package_id = 19;
 
+  int64 attach_user_id = 20;
+  int64 attach_user_position = 21;
+
 }

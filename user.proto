@@ -24,7 +24,7 @@ message Id {
 }
 
 enum WalletType {
-	BTC = 0;
+	USDT = 0;
 }
 
 message WalletRequest {

@@ -12,12 +12,12 @@ use UnexpectedValueException;
 class WalletType
 {
     /**
-     * Generated from protobuf enum <code>BTC = 0;</code>
+     * Generated from protobuf enum <code>USDT = 0;</code>
      */
-    const BTC = 0;
+    const USDT = 0;
 
     private static $valueToName = [
-        self::BTC => 'BTC',
+        self::USDT => 'USDT',
     ];
 
     public static function name($value)
